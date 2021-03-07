@@ -1,0 +1,19 @@
+{
+  "name": "tcm-js-lib",
+  "version": "1.0.0",
+  "description": "SweetTang's personal javascript tool magazine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TCM1205619139/tcm-js-lib.git"
+  },
+  "author": "Sweet Tang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TCM1205619139/tcm-js-lib/issues"
+  },
+  "homepage": "https://github.com/TCM1205619139/tcm-js-lib#readme"
+}
