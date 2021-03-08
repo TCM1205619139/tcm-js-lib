@@ -12,7 +12,7 @@ module.exports = {
   },
 
   /**
-   * 将p中的可枚举属性复制到o中，若o中有同名属性则不受影响
+   * 将 p中的可枚举属性复制到 o中，若 o中有同名属性则不受影响
    * @param {Object} o 
    * @param {Object} p 
    */

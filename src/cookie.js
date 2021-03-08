@@ -1,7 +1,7 @@
 /**
  * Cookie is a single instance, use Cookie.getInstance to create a new instance or get a exist instance
  */
-class Cookie {
+module.exports = class Cookie {
   static instance
 
   constructor(cookie) {
@@ -12,7 +12,7 @@ class Cookie {
 
   static getInstance() {
     try {
-      if (!Cookie.instance && window != undefined) {
+      if (!Cookie.instance && window !== undefined) {
         Cookie.instance = new Cookie(document.cookie)
       }
       return Cookie.instance
@@ -29,37 +29,22 @@ class Cookie {
     return null;
   }
 
-  setItem(key, value) {
-    let result
-
-    if(value !== undefined) {
-      result = ` ${key}=${value};`
-    } else {
-      result = key
+  setItem(key, value, maxAge) {
+    if (value !== undefined) {
+      document.cookie = `${key}=${value}; max-age=${maxAge === undefined ? null : maxAge}`
+      this.instance = document.cookie
+    }
+    else {
+      throw new TypeError('value cannot be undefined')
     }
 
-    this.instance += result
+    return this
   }
 
   removeItem(name) {
-    let cookieObject = this.parse()
-    let keys = Object.keys(cookieObject)
-    let result = ''
+    this.setItem(name, '', 0)
 
-    keys.some((value, index) => {
-      if (value == name) {
-        delete cookieObject[value]
-        keys.splice(index, 1)
-
-        return value == name
-      }
-    })
-
-    keys.forEach(el => {
-      result += el + '=' + cookieObject[el] + '; '
-    })
-
-    return this.instance = result
+    return this
   }
 
   parse() {
@@ -72,12 +57,4 @@ class Cookie {
     }
     return value
   }
-
-  isExist(key) {
-    let regExp = new RegExp(`${key}`, 'gi')
-
-    return regExp.test(this.instance)
-  }
 }
-
-module.exports = Cookie
