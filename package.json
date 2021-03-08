@@ -1,6 +1,6 @@
 {
   "name": "tcm-js-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SweetTang's personal javascript tool magazine",
   "main": "index.js",
   "scripts": {
