@@ -1,24 +1,23 @@
 /**
  * Cookie is a single instance, use Cookie.getInstance to create a new instance or get a exist instance
  */
-export class Cookie {
+class Cookie {
   static instance
 
   constructor(cookie) {
-    if (Window) {
-      this.instance = cookie
-    }
+    if (Window) this.instance = cookie
+
     return undefined
   }
 
   static getInstance() {
     try {
-      if (!Cookie.instance && document) {
+      if (!Cookie.instance && window != undefined) {
         Cookie.instance = new Cookie(document.cookie)
       }
       return Cookie.instance
     } catch (e) {
-      throw e
+      throw new ReferenceError('There are no Window object in the current environment')
     }
   }
 
@@ -55,7 +54,6 @@ export class Cookie {
         return value == name
       }
     })
-    console.log(cookieObject)
 
     keys.forEach(el => {
       result += el + '=' + cookieObject[el] + '; '
@@ -82,3 +80,4 @@ export class Cookie {
   }
 }
 
+module.exports = Cookie

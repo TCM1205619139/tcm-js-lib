@@ -1,6 +1,12 @@
-import method from './methods'
-import Cookie from './cookie'
+const object = require('./src/object')
+const sort = require('./src/sort')
+const performance = require('./src/performance')
 
+const Cookie = require('./src/cookie')
 
-export const {...args} = method
-export const Cookie = Cookie
+module.exports = {
+  object,
+  sort,
+  performance,
+  Cookie
+}
