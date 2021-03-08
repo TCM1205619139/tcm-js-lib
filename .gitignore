@@ -1,4 +1,5 @@
 node_modules
+coverage
 
 # Log files
 npm-debug.log*

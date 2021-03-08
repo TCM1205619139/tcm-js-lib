@@ -1,10 +1,11 @@
 {
   "name": "tcm-js-lib",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "SweetTang's personal javascript tool magazine",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "coverage": "jest --coverage",
     "taobao": "npm config set registry https://registry.npm.taobao.org",
     "npmjs": "npm config set registry https://registry.npmjs.org/"
   },
@@ -19,7 +20,9 @@
   },
   "homepage": "https://github.com/TCM1205619139/tcm-js-lib#readme",
   "devDependencies": {
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "mockjs": "^1.1.0"
   },
-  "type":"commonjs"
+  "type": "commonjs",
+  "dependencies": {}
 }

@@ -5,8 +5,8 @@ const performance = require('./src/performance')
 const Cookie = require('./src/cookie')
 
 module.exports = {
-  object,
-  sort,
-  performance,
+  ...object,
+  ...sort,
+  ...performance,
   Cookie
 }
