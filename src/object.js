@@ -36,5 +36,11 @@ module.exports = {
     }
 
     return target;
+  },
+  blob2File (blob, name) {
+    return new File([blob], name, {
+      lastModified: new Date().getTime(),
+      type: blob.type
+    })
   }
 }
