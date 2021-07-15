@@ -1,4 +1,6 @@
-const sort = {
+var { getRandom } = require('./common')
+
+module.exports = {
   /**
    * 快速排序
    * @param {Number[]} array
@@ -17,10 +19,10 @@ const sort = {
     }
 
     if (leftArr.length >= 2) {
-      leftArr = sort.quickSort(leftArr)
+      leftArr = array.quickSort(leftArr)
     }
     if (rightArr.length >= 2) {
-      rightArr = sort.quickSort(rightArr)
+      rightArr = array.quickSort(rightArr)
     }
 
     return leftArr.concat(point, rightArr);
@@ -30,7 +32,7 @@ const sort = {
    * @param {Number[]} nums
    */
   mergeSort: function (nums) {
-    var merge = function (array, left, right) {
+    const merge = function (array, left, right) {
       if (left == right) {
         return [array[left]];
       }
@@ -60,7 +62,50 @@ const sort = {
     }
 
     return merge(nums, 0, nums.length - 1);
+  },
+  /**
+   * 鸽尾式洗牌
+   * @param { Array } input
+   * @param { Number } time
+   */
+  riffleShuffle: function (input, time=7) {
+    const shuffle = function (array) {
+      let minArr
+      let maxArr
+      let newArr = []
+      const c = getRandom(0, array.length)
+
+
+      minArr = array.slice(0, c)
+      maxArr = array.slice(c)
+
+      if (minArr.length > maxArr.length) {
+        const tempArr = minArr
+
+        minArr = maxArr
+        maxArr = tempArr
+      }
+
+      while (minArr.length !== 0) {
+        newArr.push(minArr.shift())
+        newArr.push(maxArr.shift())
+      }
+
+      while (maxArr.length !== 0) {
+        newArr.push((maxArr.shift()))
+      }
+
+      return newArr
+    }
+
+    let result = []
+
+    while (time-- > 0) {
+      result = result === []
+      ? shuffle(input)
+      : shuffle(result)
+    }
+
+    return result
   }
 }
-
-module.exports = sort

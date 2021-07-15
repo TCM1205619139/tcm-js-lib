@@ -1,12 +1,12 @@
 const object = require('./src/object')
-const sort = require('./src/sort')
+const array = require('./src/array')
 const performance = require('./src/performance')
 
 const Cookie = require('./src/cookie')
 
 module.exports = {
   ...object,
-  ...sort,
+  ...array,
   ...performance,
   Cookie
 }
