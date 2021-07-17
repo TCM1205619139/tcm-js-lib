@@ -1,6 +1,7 @@
 const {
   quickSort,
-  mergeSort
+  mergeSort,
+  riffleShuffle
 } = require('../index')
 
 const {
@@ -26,4 +27,14 @@ test('test mergeSort method', () => {
   }
 
   expect(mergeSort(testArray)).toEqual(testArray.sort((a, b) => a - b))
+})
+
+test('test shuffer method', () => {
+  let array = []
+
+  for (let i=0; i<54; i++) {
+    array.push(i)
+  }
+
+  expect(riffleShuffle(array)).toEqual()
 })

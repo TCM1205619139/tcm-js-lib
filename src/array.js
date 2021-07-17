@@ -1,6 +1,6 @@
 var { getRandom } = require('./common')
 
-module.exports = {
+const arr = {
   /**
    * 快速排序
    * @param {Number[]} array
@@ -19,10 +19,10 @@ module.exports = {
     }
 
     if (leftArr.length >= 2) {
-      leftArr = array.quickSort(leftArr)
+      leftArr = arr.quickSort(leftArr)
     }
     if (rightArr.length >= 2) {
-      rightArr = array.quickSort(rightArr)
+      rightArr = arr.quickSort(rightArr)
     }
 
     return leftArr.concat(point, rightArr);
@@ -75,7 +75,6 @@ module.exports = {
       let newArr = []
       const c = getRandom(0, array.length)
 
-
       minArr = array.slice(0, c)
       maxArr = array.slice(c)
 
@@ -101,7 +100,7 @@ module.exports = {
     let result = []
 
     while (time-- > 0) {
-      result = result === []
+      result = result.length === 0
       ? shuffle(input)
       : shuffle(result)
     }
@@ -109,3 +108,5 @@ module.exports = {
     return result
   }
 }
+
+module.exports = arr
