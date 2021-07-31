@@ -2,7 +2,7 @@ const {
   deepClone,
   extend,
   merge
-} = require('../index')
+} = require('../dist/index')
 
 const {Random} = require('mockjs')
 

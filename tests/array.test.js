@@ -2,7 +2,7 @@ const {
   quickSort,
   mergeSort,
   riffleShuffle
-} = require('../index')
+} = require('../dist/index')
 
 const {
   Random
@@ -36,5 +36,5 @@ test('test shuffer method', () => {
     array.push(i)
   }
 
-  expect(riffleShuffle(array)).toEqual()
+  expect(riffleShuffle(array).length).toEqual(54)
 })

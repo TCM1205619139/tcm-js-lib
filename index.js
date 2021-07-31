@@ -1,12 +1,13 @@
-const object = require('./src/object')
-const array = require('./src/array')
-const performance = require('./src/performance')
+import * as object from './src/object'
+import * as array from './src/array'
+import * as performance from './src/performance'
+import * as common from './src/common'
+import Cookie from './src/cookie'
 
-const Cookie = require('./src/cookie')
-
-module.exports = {
+export default {
   ...object,
   ...array,
   ...performance,
+  ...common,
   Cookie
 }

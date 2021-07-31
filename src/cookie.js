@@ -1,7 +1,7 @@
 /**
  * Cookie is a single instance, use Cookie.getInstance to create a new instance or get a exist instance
  */
-module.exports = class Cookie {
+class Cookie {
   static instance
 
   constructor(cookie) {
@@ -58,3 +58,5 @@ module.exports = class Cookie {
     return value
   }
 }
+
+export default Cookie

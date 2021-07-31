@@ -10,7 +10,7 @@ const getRandom = (start, end) => {
 
 /**
  * 异步非阻塞的不可中断compose函数
- * @param  {Function[]} fns 
+ * @param  {Function[]} fns
  * @returns {Function => Promise}
  */
 const composeAsync = (...fns) => {
@@ -28,15 +28,15 @@ const composeAsync = (...fns) => {
 
 /**
  * 同步阻塞的不可中断compose函数
- * @param  {Function[]} fns 
+ * @param  {Function[]} fns
  * @returns {Function}
  */
 const composeSync = (...fns) => input => fns.reduce(
   async (acc, fn) => await fn(acc),
-    input
+  input
 )
 
-module.exports = {
+export {
   getRandom,
   composeAsync,
   composeSync

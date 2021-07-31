@@ -1,11 +1,13 @@
 {
   "name": "tcm-js-lib",
   "version": "1.0.2",
+  "type": "commonjs",
   "description": "SweetTang's personal javascript tool magazine",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "coverage": "jest --coverage",
+    "build": "rollup --config rollup.config.prod.js",
+    "test": "rollup --config rollup.config.dev.js && jest",
+    "coverage": "rollup --config rollup.config.dev.js && jest --coverage",
     "taobao": "npm config set registry https://registry.npm.taobao.org",
     "npmjs": "npm config set registry https://registry.npmjs.org/"
   },
@@ -20,9 +22,18 @@
   },
   "homepage": "https://github.com/TCM1205619139/tcm-js-lib#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "babel-jest": "^27.0.6",
+    "core-js": "^3.16.0",
     "jest": "^26.6.3",
-    "mockjs": "^1.1.0"
+    "mockjs": "^1.1.0",
+    "rollup": "^2.55.1",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0"
   },
-  "type": "commonjs",
   "dependencies": {}
 }

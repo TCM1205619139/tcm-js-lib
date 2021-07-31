@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": false,
+        "useBuiltIns": "usage",
+        "targets": {
+          "chrome": "55",
+          "ie": "11"
+        },
+        "corejs": {
+          "version": "3",
+          "proposals": true
+        }
+      }
+    ]
+  ]
+}

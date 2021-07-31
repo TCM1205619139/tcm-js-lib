@@ -1,4 +1,4 @@
-const {Cookie} = require('../index')
+const {Cookie} = require('../dist/index')
 const {Random} = require('mockjs')
 
 const name = Random.cname()

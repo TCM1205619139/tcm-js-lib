@@ -1,7 +1,4 @@
-const {
-  throttle,
-  debounce
-} = require('../index')
+const { throttle, debounce } = require('../dist/index')
 
 test('test debounce method', () => {
   // let flag = true
