@@ -1,6 +1,6 @@
 {
   "name": "tcm-js-lib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "commonjs",
   "description": "SweetTang's personal javascript tool magazine",
   "main": "index.js",
@@ -35,5 +35,6 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-json": "^4.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }
